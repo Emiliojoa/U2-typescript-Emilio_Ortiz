@@ -1,44 +1,20 @@
-// Ejercicio 14: Type assertions
+// // 13. Función que toma un argumento de tipo Color y devuelve un mensaje con el color
+// enum Color {
+// 	Rojo = "Rojo",
+// 	Verde = "Verde",
+// 	Azul = "Azul"
+// }
 
-// Type assertions permiten indicarle al compilador que trate una variable como un tipo específico
+// function mensajeColor(color: Color): string {
+// 	return `El color seleccionado es: ${color}`;
+// }
 
-// Ejemplo 1: Usando la sintaxis "as"
-let someValue: any = "Esto es una cadena de texto";
-let strLength: number = (someValue as string).length;
-console.log(`La longitud de la cadena es: ${strLength}`);
+// // Ejemplo de uso:
+// const colorElegido: Color = Color.Verde;
+// console.log(mensajeColor(colorElegido));
 
-// Ejemplo 2: Usando la sintaxis con angle-brackets (menos común y no funciona en JSX)
-let otherValue: any = "Otra cadena de texto";
-let otherLength: number = (<string>otherValue).length;
-console.log(`La longitud de la otra cadena es: ${otherLength}`);
 
-// Ejemplo 3: Type assertion con objetos
-interface Person {
-    name: string;
-    age: number;
-}
-
-let userInput: any = {
-    name: "Juan",
-    age: 30
-};
-
-// Aseguramos al compilador que userInput es de tipo Person
-let user = userInput as Person;
-console.log(`Nombre: ${user.name}, Edad: ${user.age}`);
-
-// Ejemplo 4: Type assertion en funciones
-function procesarDato(dato: any): string {
-    // Aseguramos que dato es un número antes de operarlo
-    if (typeof dato === "number") {
-        return `El resultado es: ${(dato as number) * 2}`;
-    } else {
-        return `No es un número: ${dato}`;
-    }
-}
-
-console.log(procesarDato(5));
-console.log(procesarDato("Hola"));
-
-// Exportar la interfaz Person para uso en otros archivos
-export { Person };
+let valor: any = 12345;
+// Convertimos el valor a string antes de usar type assertion
+let longitud: number = (valor as string | string).toString().length;
+console.log(`La longitud del valor como string es: ${longitud}`);

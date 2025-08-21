@@ -1,28 +1,14 @@
+// 13. Función que toma un argumento de tipo Color y devuelve un mensaje con el color
 enum Color {
-    Red,
-    Green,
-    Blue
+	Rojo = "Rojo",
+	Verde = "Verde",
+	Azul = "Azul"
 }
 
-function getColorMessage(color: Color): string {
-    switch (color) {
-        case Color.Red:
-            return "El color seleccionado es Rojo";
-        case Color.Green:
-            return "El color seleccionado es Verde";
-        case Color.Blue:
-            return "El color seleccionado es Azul";
-        default:
-            return "Color desconocido";
-    }
+function mensajeColor(color: Color): string {
+	return `El color seleccionado es: ${color}`;
 }
 
-console.log(getColorMessage(Color.Red));
-console.log(getColorMessage(Color.Green));
-console.log(getColorMessage(Color.Blue));
-
-
-console.log(`Color.Red = ${Color.Red}`);
-console.log(`Color.Green = ${Color.Green}`);
-console.log(`Color.Blue = ${Color.Blue}`);
-
+// Ejemplo de uso:
+const colorElegido: Color = Color.Verde;
+console.log(mensajeColor(colorElegido));
