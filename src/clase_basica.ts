@@ -1,20 +1,9 @@
 class Car {
-    make: string;
-    
-    constructor(make: string) {
-        this.make = make;
-    }
-    
+    make: string= ""
     drive() {
         console.log(`Driving a ${this.make}`);
     }
 }
-
-// Crear una instancia de Car
-const myCar = new Car("Toyota");
-
-// Llamar al método drive
+const myCar = new Car()
+myCar.make="honda"
 myCar.drive();
-
-// Exportar la clase Car
-export { Car };
