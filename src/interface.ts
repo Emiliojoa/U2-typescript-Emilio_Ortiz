@@ -7,3 +7,8 @@ let person : Person={
     age: 20
 }
 console.log(person)
+
+export type {
+
+    Person
+}
