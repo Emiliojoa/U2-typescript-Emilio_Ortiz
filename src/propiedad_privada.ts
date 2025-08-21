@@ -10,3 +10,7 @@ class Car {
 }
 const auto = new Car("ford")
 auto.drive()
+
+export type{
+    Car
+}
